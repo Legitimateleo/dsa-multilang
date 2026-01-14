@@ -111,6 +111,7 @@ bool LinkedList:: deleteTail(T &data){
                count--;
                return true;
           }    
+     return false;
      }
 }
 

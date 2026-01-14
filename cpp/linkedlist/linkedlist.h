@@ -15,7 +15,7 @@ typedef int T;
 
 //node structure
 struct Node {
-    T data;   //stored value
+    T data;      //stored value
     Node* next;  //pointer to the next node
 
     //constructor
