@@ -20,7 +20,6 @@ My goals:
 - `typescript/` – TypeScript implementations
 
 Within each language:
-- `arrays/`
 - `linked-lists/`
 - `trees/`
 - `graphs/`
@@ -30,7 +29,6 @@ Within each language:
 
 | Topic          | C++ | Python | TypeScript |
 |----------------|-----|--------|------------|
-| Arrays         | ⏳  | ⏳     | ⏳        |
 | Linked Lists   | ⏳  | ⏳     | ⏳        |
 | Trees          | ⏳  | ⏳     | ⏳        |
 | Graphs         | ⏳  | ⏳     | ⏳        |
