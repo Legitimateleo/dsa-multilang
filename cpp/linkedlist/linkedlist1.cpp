@@ -183,3 +183,14 @@ LinkedList & LinkedList::operator=(const LinkedList &otherList){
     return *this;
 
 }
+
+bool LinkedList::search(T key){
+     Node* current = head;
+     while(current != nullptr){
+          if( current -> data == key){
+               return true;
+          }
+          current = current -> next;
+     }
+     return false;
+}

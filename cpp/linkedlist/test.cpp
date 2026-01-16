@@ -100,7 +100,7 @@ int main() {
     else if (value == 6){
         LinkedList list;
         int node;
-         std::cout << "First make your list (enter 5 single digit numbers) :";
+        std::cout << "First make your list (enter 5 single digit numbers) :";
         for(int i = 0; i < 5; i++){
             std::cin >> node;
             list.append(node);
@@ -115,6 +115,25 @@ int main() {
         list.displayAll();
     }
     else if(value == 7){
+        LinkedList list;
+        int node;
+        std::cout << "First make your list (enter 5 single digit numbers) :";
+        for(int i = 0; i < 5; i++){
+            std::cin >> node;
+            list.append(node);
+        }
+        std::cout << "Your List: " << std::endl;
+        list.displayAll();
+        std::cout << "Enter number you want to search for: ";
+        int key;
+        std::cin >> key;
+        if(list.search(key)){
+            std::cout << key << " was found in list";
+        }
+        else{
+            std::cout << key << " was not found in the list... sorry";
+        }
+        ;
 
     }
     else if (value == 8){

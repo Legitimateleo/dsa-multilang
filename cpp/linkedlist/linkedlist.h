@@ -64,6 +64,8 @@ private:
 
     bool insertAt(int pos, T data);
 
+    bool search(T key);
+
 };
 
 
