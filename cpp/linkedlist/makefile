@@ -11,7 +11,5 @@ all: test
 test: test.o linkedlist1.o
 	$(CC) test.o linkedlist1.o -o test
 
-
-
 clean:
 	rm *.o test
