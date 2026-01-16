@@ -1,16 +1,38 @@
-
+//=============================================================================
+/**
+ * @file test.cpp
+ * @brief Driver program for testing the LinkedList class.
+ *
+ * This program provides a menu-driven interface that allows a user
+ * to interactively test various LinkedList operations, including
+ * insertion, deletion, searching, copying, and assignment.
+ *
+ * Each menu option constructs a LinkedList instance and exercises
+ * a specific method to verify correctness and behavior.
+ *
+ * @author Leonardo Solorzano
+ * @date   01/16/2026
+ */
+//=============================================================================
 #include "linkedlist.h"
 #include <iostream>
 using namespace std;
 
+
 int main() {
     int value;
+
+    // Display menu of available LinkedList operations
     std::cout << "1) Push Front" << std::endl << "2) Push Back" << std::endl 
               << "3) Pop Front" << std::endl << "4) Pop Back "  << std::endl 
               << "5) Insert At Index" << std::endl << "6) Remove At Index" << std::endl
               << "7) Find" << std::endl << "8) Clear" << std::endl << "9) Copy Test" << std::endl 
               << "10)Assign Test" << std::endl<< "11) Exit" << std::endl;
+    
+    // Read user’s menu selection
     std::cin >> value;
+
+    // Exit early if the user chooses to quit
     if (value == 11){
         std::cout << "have a nice day!" << std::endl;
         return 0;
