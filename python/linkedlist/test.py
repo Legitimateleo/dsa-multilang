@@ -6,17 +6,23 @@ def main():
     ll.append(20)
     ll.append(30)
 
+    # basic checks
     assert ll.size() == 3
     assert not ll.is_empty()
-    assert ll.search(2)
 
-    ll.delete_head()
-    print("List after deleting head: ")
-    ll.display()
+    #searching list
+    assert ll.search(20)
+    assert not ll.search(40)
 
+    #Delete head and make sure that the list updates correctly
+    removed = ll.delete_head()
+    assert removed == 10
     assert ll.size() == 2
+
+    print("list after deleting head")
+    print(ll)
 
     print("All tests passed")
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
