@@ -40,8 +40,10 @@ string LinkedList::toString(){
      stringstream ss;
      Node* current = head;
      while(current != nullptr){
+          ss << "[";
           ss << current->data;
           current = current -> next;
+          ss << "] ";
      }
      return ss.str();
 
