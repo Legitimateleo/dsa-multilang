@@ -65,9 +65,11 @@ export class DoublyLinkedList<T> {
         }
         if(index === 0){
             this.prepend(data);
+            return;
         }
         else if( index === this.count){
             this.append(data);
+            return;
         }
         else{
             const newNode = new _Node<T>(data);
@@ -75,12 +77,12 @@ export class DoublyLinkedList<T> {
             for(let i = 0; i < index - 1; i++){
                 current = current.next!;
             }
-            newNode.next = current.next;
             newNode.prev = current;
+            newNode.next = current.next;
             current.next = newNode;
+            current.next!.prev = newNode;
         }
         this.count++;
-
     }
 
     public removeHead() : T | null {
