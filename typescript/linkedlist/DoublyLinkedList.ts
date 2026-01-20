@@ -30,6 +30,18 @@ export class DoublyLinkedList<T> {
         return this.count;
     }
 
+    public toString(): string {
+    const parts: string[] = [];
+    let current = this.head;
+
+    while (current !== null) {
+        parts.push(String(current.data));
+        current = current.next;
+    }
+
+    return parts.join(" <-> ");
+    }
+
     public prepend(data:T) : void {
         const newNode = new _Node<T>(data);
         if (this.isEmpty()){
@@ -64,12 +76,10 @@ export class DoublyLinkedList<T> {
             throw new Error("Index out of bounds");
         }
         if(index === 0){
-            this.prepend(data);
-            return;
+            return this.prepend(data);
         }
         else if( index === this.count){
-            this.append(data);
-            return;
+            return this.append(data);
         }
         else{
             const newNode = new _Node<T>(data);
@@ -77,28 +87,99 @@ export class DoublyLinkedList<T> {
             for(let i = 0; i < index - 1; i++){
                 current = current.next!;
             }
+            const right = current.next!;   // save the node that was originally after current
+
             newNode.prev = current;
-            newNode.next = current.next;
+            newNode.next = right;
+
             current.next = newNode;
-            current.next!.prev = newNode;
+            right.prev = newNode;
+            this.count++;
         }
-        this.count++;
     }
 
     public removeHead() : T | null {
-        return null;
+        if(this.isEmpty()){
+            return null;
+        }
+        const temp = this.head!;
+        const tempData = temp.data;
+
+        this.head = temp.next;
+
+        if(this.head){
+            this.head!.prev = null;
+        }else{
+            this.tail = null;
+        }
+        
+        temp.next = null;
+        temp.prev = null;
+
+        this.count--;
+        return tempData;
     }
 
     public removeTail() : T | null {
-        return null;
+        if(this.isEmpty()){
+            return null;
+        }
+        const temp = this.tail!;
+        const tempData = temp.data;
+
+        this.tail = this.tail!.prev;
+
+        if(this.tail){
+            this.tail!.next = null;
+        }else{
+            this.head = null;
+        }
+        temp.next = null;
+        temp.prev = null;
+
+        this.count--;
+        return tempData;
     }
 
     public removeAt(index:number) : T | null {
-        return null;
+         if(index < 0 || index >= this.count){
+            throw new Error("Index out of bounds");
+        }
+        if(index === 0){
+            return this.removeHead();
+        }
+        else if( index === this.count-1){
+            return this.removeTail();
+        }
+        else{
+            let temp = this.head!;
+            for(let i = 0; i < index; i++){
+                temp = temp.next!;
+            }
+            const left = temp.prev!;
+            const right = temp.next!;
+
+            left.next = right;
+            right.prev = left;
+
+            temp.next = null;
+            temp.prev = null;
+            this.count--;
+            return temp.data;
+        }
+
     }
 
-    public search(data:T) : number {
-        return -1;
+    public search(key:T) : boolean{
+        let current = this.head;
+        let index = 0;
+        while(current != null){
+            if(current.data === key){
+                return true;
+            }
+            current = current.next!;
+        }
+        return false
     }
 }
 
