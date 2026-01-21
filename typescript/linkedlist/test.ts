@@ -1,12 +1,10 @@
-import { DoublyLinkedList } from "./DoublyLinkedList"; // <-- match your filename exactly
+import { DoublyLinkedList } from "./DoublyLinkedList";
 
 function assert(condition: boolean, message: string): void {
     console.assert(condition, message);
 }
 
 function show<T>(label: string, list: any): void {
-    // If you added toString(), this prints the list nicely.
-    // Otherwise it prints the label only.
     if (typeof list.toString === "function") {
         console.log(`${label}: ${list.toString()}`);
     } else {
