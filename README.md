@@ -29,7 +29,7 @@ Within each language:
 
 | Topic          | C++ | Python | TypeScript |
 |----------------|-----|--------|------------|
-| Linked Lists   | ✅  | ✅     | ⏳        |
+| Linked Lists   | ✅  | ✅     | ✅        |
 | Trees          | ⏳  | ⏳     | ⏳        |
 | Graphs         | ⏳  | ⏳     | ⏳        |
 | Sorting        | ⏳  | ⏳     | ⏳        |
